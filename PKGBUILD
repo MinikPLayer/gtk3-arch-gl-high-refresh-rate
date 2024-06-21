@@ -54,7 +54,7 @@ depends=(
 makedepends=(
   at-spi2-core
   git
-  glib2-docs
+  glib2-devel
   gobject-introspection
   gtk-doc
   hicolor-icon-theme
