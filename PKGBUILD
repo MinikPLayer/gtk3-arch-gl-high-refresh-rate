@@ -71,11 +71,6 @@ b2sums=('3f79244cfeac535186b84e6c9ad3dad7dbb5737e4ebd8762985fce95930a9bbb07fcc33
         '8e6a3906126749c6d853f582e3802254cdbba099c6af7190ad576eff6ea5425404a72b1b36950a87e3afdac82295cfe246003172c3e0341a73bd931a36f3b407'
         '7da1746e7702e4bf397f59dd1019e2c8fa8951b2bcc6bf64ec05f322de6dcec6fe5552848d6b389818f625988a3fb2211501d7f72ae97d2c49fbad1e5fe9cd6a')
 
-pkgver() {
-  cd gtk
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
-
 prepare() {
   cd gtk
   git apply -3 ../0001-Allow-disabling-legacy-Tracker-search.patch
