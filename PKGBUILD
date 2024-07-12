@@ -16,7 +16,7 @@ arch=(x86_64)
 license=(LGPL-2.1-or-later)
 depends=(
   adwaita-icon-theme
-  atk
+  at-spi2-core
   cairo
   cantarell-fonts
   dconf
@@ -52,7 +52,6 @@ depends=(
   wayland
 )
 makedepends=(
-  at-spi2-core
   git
   glib2-devel
   gobject-introspection
