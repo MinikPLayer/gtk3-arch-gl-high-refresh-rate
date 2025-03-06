@@ -73,10 +73,6 @@ b2sums=('d406c2d0ce8c578af27624550a49e298ad5ebacb4e6c6998011cf31fe12dfd8aef3227c
 prepare() {
   cd gtk
 
-  # Crash fix
-  # https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/8199
-  git cherry-pick -n 32381771b1cfa55770036e525a6c53c70be6c920
-
   # Don't try to use the old Tracker
   git apply -3 ../0001-Allow-disabling-legacy-Tracker-search.patch
 }
