@@ -17,13 +17,14 @@ path = [
     "*.timer",
     "*.desktop",
     "*.hook",
+    "*.script",
 ]
 SPDX-FileCopyrightText = "Arch Linux contributors"
 SPDX-License-Identifier = "0BSD"
 
 [[annotations]]
 path = [
-    "0001-Allow-disabling-legacy-Tracker-search.patch",
+    "*.patch",
 ]
 SPDX-FileCopyrightText = "gtk3 contributors"
 SPDX-License-Identifier = "LGPL-2.1-or-later"
