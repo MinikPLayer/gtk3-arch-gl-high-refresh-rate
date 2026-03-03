@@ -9,10 +9,10 @@ Calcualte a new constant timer by dividing 1000000us by your refresh rate. (For 
 Modify the ``0002-refresh-rate-timer.patch`` file by changing the patched constant (**6060**) to the calculated one.
 
 ## Build and Install
-```
-git checkout {target_refresh_rate_branch}
-makepkg -si
-```
+Remember to checkout the correct branch
+``git checkout {target_refresh_rate_branch}``
+Then run the Arch package tool:
+``makepkg -si``
 
 ## Update upstream
 ```
