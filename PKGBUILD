@@ -7,10 +7,11 @@ pkgname=(
   gtk3-demos
   gtk3-docs
 )
-pkgver=3.24.51.165
+BASE_PKG_VER=3.24.51
+pkgver=$BASE_PKG_VER.165
 pkgrel=1
 epoch=1
-pkgdesc="GObject-based multi-platform GUI toolkit"
+pkgdesc="GObject-based multi-platform GUI toolkit with 165Hz patch"
 url="https://www.gtk.org/"
 arch=(x86_64)
 license=(LGPL-2.1-or-later)
@@ -62,10 +63,10 @@ makedepends=(
   wayland-protocols
 )
 source=(
-  "git+https://gitlab.gnome.org/GNOME/gtk.git#tag=3.24.51"
+  "git+https://gitlab.gnome.org/GNOME/gtk.git#tag=$BASE_PKG_VER"
   gtk-query-immodules-3.0.hook
   0001-Allow-disabling-legacy-Tracker-search.patch
-  0002-165Hz.patch
+  0002-refresh-rate-timer.patch
 )
 b2sums=('06f5dcfe6cf693d4e0da0964715e7ea07ab8940eea21b7fba28615c6d9ecdd8533e51e061b57e6b4f5b9401041adeb52fd81fc856fa79dc5bf8e5a4058d9fa92'
         '8e6a3906126749c6d853f582e3802254cdbba099c6af7190ad576eff6ea5425404a72b1b36950a87e3afdac82295cfe246003172c3e0341a73bd931a36f3b407'
@@ -79,7 +80,7 @@ prepare() {
   git apply -3 ../0001-Allow-disabling-legacy-Tracker-search.patch
 
   # Apply the 165Hz patch
-  git apply -3 ../0002-165Hz.patch
+  git apply -3 ../0002-refresh-rate-timer.patch
 }
 
 build() {
