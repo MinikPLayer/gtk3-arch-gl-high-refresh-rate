@@ -5,7 +5,7 @@ This repository contains a modded GTK3 PKGBUILD repository, which changed the de
 Current method is a bit of a hack and works by changing the timer interval to a different constant.
 
 ## Change to another refresh rate
-Calcualte a new constant timer by dividing 1000000us by your refresh rate. (For example for 165Hz it's 1000000 / 165 = ~6060).
+Calcualte a new constant timer by dividing 1000000us by your refresh rate. (For example for 165Hz it's ``1000000 / 165 = ~6060``).
 Modify the ``0002-refresh-rate-timer.patch`` file by changing the patched constant (**6060**) to the calculated one.
 
 ## Build and Install
