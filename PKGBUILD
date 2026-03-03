@@ -7,7 +7,7 @@ pkgname=(
   gtk3-demos
   gtk3-docs
 )
-pkgver=3.24.51
+pkgver=3.24.51.165
 pkgrel=1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
@@ -62,19 +62,24 @@ makedepends=(
   wayland-protocols
 )
 source=(
-  "git+https://gitlab.gnome.org/GNOME/gtk.git#tag=$pkgver"
+  "git+https://gitlab.gnome.org/GNOME/gtk.git#tag=3.24.51"
   gtk-query-immodules-3.0.hook
   0001-Allow-disabling-legacy-Tracker-search.patch
+  0002-165Hz.patch
 )
 b2sums=('06f5dcfe6cf693d4e0da0964715e7ea07ab8940eea21b7fba28615c6d9ecdd8533e51e061b57e6b4f5b9401041adeb52fd81fc856fa79dc5bf8e5a4058d9fa92'
         '8e6a3906126749c6d853f582e3802254cdbba099c6af7190ad576eff6ea5425404a72b1b36950a87e3afdac82295cfe246003172c3e0341a73bd931a36f3b407'
-        'cb50a01255877f5c978844e6a15d929dd28377e87f9c78e52ef63ac54cbe3f0d165994d7e716dd787a4f804255afa1adcb1d5fc7ae0ae1439f281e96c76eff2b')
+        'cb50a01255877f5c978844e6a15d929dd28377e87f9c78e52ef63ac54cbe3f0d165994d7e716dd787a4f804255afa1adcb1d5fc7ae0ae1439f281e96c76eff2b'
+        'f8ab23ece89cdad32619fc3b561bd9113b99ffb156af90bdd621dc87cc866dff40a2293b51bee139f240d299ee8181f046774d06a3754eefda516ad88ab3b705')
 
 prepare() {
   cd gtk
 
   # Don't try to use the old Tracker
   git apply -3 ../0001-Allow-disabling-legacy-Tracker-search.patch
+
+  # Apply the 165Hz patch
+  git apply -3 ../0002-165Hz.patch
 }
 
 build() {

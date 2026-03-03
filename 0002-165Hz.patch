@@ -1,0 +1,12 @@
+diff '--color=auto' -ura a/gdk/gdkframeclockidle.c b/gdk/gdkframeclockidle.c
+--- a/gdk/gdkframeclockidle.c	2026-03-03 17:49:52.265458339 +0100
++++ b/gdk/gdkframeclockidle.c	2026-03-03 17:45:47.948562427 +0100
+@@ -34,7 +34,7 @@
+ #include <windows.h>
+ #endif
+ 
+-#define FRAME_INTERVAL 16667 /* microseconds */
++#define FRAME_INTERVAL 6060  /* microseconds */
+ 
+ typedef enum {
+   SMOOTH_PHASE_STATE_VALID = 0,    /* explicit, since we count on zero-init */
