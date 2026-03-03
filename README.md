@@ -10,9 +10,13 @@ Modify the ``0002-refresh-rate-timer.patch`` file by changing the patched consta
 
 ## Build and Install
 Remember to checkout the correct branch
-``git checkout {target_refresh_rate_branch}``
+```
+git checkout {target_refresh_rate_branch}
+```
 Then run the Arch package tool:
-``makepkg -si``
+```
+makepkg -si
+```
 
 ## Update upstream
 ```
